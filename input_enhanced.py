@@ -22,7 +22,7 @@ OUTPUT: The diagnostic plots will be saved in the directory given by diagnostic_
 The following three inputs must be provided accurately
 for the code to run
 '''
-obsid_f             ='ObsID.dat'    # The name of the file that contains the list of ObsIDs
+obsid_f             ='ObsID_small.dat'    # The name of the file that contains the list of ObsIDs
 bkg_dir             ='/home/dbarnali/heasoft/3c50_bgmodel/bg_models_3C50'   ### The directory with the 3c50 model info
 clean_type          ='_default'#     ###### VERY IMPORTANT INPUT ######
                         #If you opt to do manual flagging, you can either do underonly based flagging (not well tested yet), or 12-15 keV based flagging, or both
@@ -54,7 +54,7 @@ update_obs_list     =False  #Set to True if you have merged some of the ObsIDs i
 extract_bkg         =True   #Extract the background spectra
 extract_arf_rmf     =True   #Extract the arf and rmf
 grp_pha             =True   #Group the spectrum so as to avoid having too few counts in any energy bin
-do_spectral_analysis=True   
+do_spectral_analysis=True     
 
 ######### INPUTS for xselect########
 time_bin_xselect    =25
@@ -78,9 +78,9 @@ It will perform MCMC to get constraints on the fitting parameters.
 '''
 model_type      ='2apec'                #a name of your choice to add to the output files
 kT_arr          =np.array([0.1,0.8])    #Guess value of kTs
-freeze_kT_arr   =np.array([False,False])#Do you want to freeze any of the kTs?
+freeze_kT_arr   =np.array([True,True])#Do you want to freeze any of the kTs?
 startE,endE     =0.3, 10.0              #Energy range to be used in spectral analysis       
-freeze_nH       =False                  #Freeze nH in the tbabs model?
+freeze_nH       =True                  #Freeze nH in the tbabs model?
 nH0             =0.01                   #Guess value for the nH parameter of the tbabs model
 ism_correct     =True                   #Do you want the ISM absorption corrected flux values
 startE_arr      =[0.5,2.0]              #Energy ranges over which you want to calculate the fluxes

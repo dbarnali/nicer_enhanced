@@ -160,11 +160,12 @@ def spectral_analysis_apec(obsid,clean_type,spec_dir,model_type,kT_arr,freeze_kT
                 else:
                     start_index=0
                 my_str+='## Chi-sq='+str(median_vals[-1])+'\n'
-                my_str+='## 1sigma Chi-sq interval='+str(u_vals_1sig[-1])+'-'+str(d_vals_1sig[-1])+'\n'
-                my_str+='## 2sigma Chi-sq interval='+str(u_vals_2sig[-1])+'-'+str(d_vals_2sig[-1])+'\n'
-                my_str+='## 3sigma chi-sq interval='+str(u_vals_3sig[-1])+'-'+str(d_vals_3sig[-1])+'\n'
+                my_str+='_nd,_nu define the n sigma confidence interval\n'
+                #my_str+='## 1sigma Chi-sq interval='+str(u_vals_1sig[-1])+'-'+str(d_vals_1sig[-1])+'\n'
+                #my_str+='## 2sigma Chi-sq interval='+str(u_vals_2sig[-1])+'-'+str(d_vals_2sig[-1])+'\n'
+                #my_str+='## 3sigma chi-sq interval='+str(u_vals_3sig[-1])+'-'+str(d_vals_3sig[-1])+'\n'
                     
-                my_str+='\n#kT\tkT_2u\tkT_2d\tNorm\t\tNorm_1u\t\tNorm_1d\t\tNorm_2u\t\tNorm_2d\t\tNorm_3u\t\tNorm_3d\n'            
+                my_str+='\n#kT\tkT_1u\tkT_1d\tNorm\t\tNorm_1u\t\tNorm_1d\t\tNorm_2u\t\tNorm_2d\t\tNorm_3u\t\tNorm_3d\n'            
                 f.write(my_str)
                 j=0
     
@@ -174,7 +175,7 @@ def spectral_analysis_apec(obsid,clean_type,spec_dir,model_type,kT_arr,freeze_kT
             
                         my_str+=str(median_vals[start_index+j])+'\t'+str(u_vals_1sig[start_index+j])+'\t'+str(d_vals_1sig[start_index+j])+'\t'+str(u_vals_2sig[start_index+j])+'\t'+str(d_vals_2sig[start_index+j])+'\t'+str(u_vals_3sig[start_index+j])+'\t'+str(d_vals_3sig[start_index+j])+'\n'
                     else:
-                        my_str=str(median_vals[start_index+j])+'\t'+str(u_vals_2sig[start_index+j])+'\t'+str(d_vals_2sig[start_index+j])+'\t'
+                        my_str=str(median_vals[start_index+j])+'\t'+str(u_vals_1sig[start_index+j])+'\t'+str(d_vals_1sig[start_index+j])+'\t'
                         j+=1
                         my_str+=str(median_vals[start_index+j])+'\t'+str(u_vals_1sig[start_index+j])+'\t'+str(d_vals_1sig[start_index+j])+'\t'+str(u_vals_2sig[start_index+j])+'\t'+str(d_vals_2sig[start_index+j])+'\t'+str(u_vals_3sig[start_index+j])+'\t'+str(d_vals_3sig[start_index+j])+'\n'
                     j+=1
@@ -491,11 +492,12 @@ def spectral_analysis_apec_multiresponse(obsid,clean_type,spec_dir,model_type,kT
             else:
                 start_index=0
             my_str+='## Chi-sq='+str(median_vals[-1])+'\n'
-            my_str+='## 1sigma Chi-sq interval='+str(u_vals_1sig[-1])+'-'+str(d_vals_1sig[-1])+'\n'
-            my_str+='## 2sigma Chi-sq interval='+str(u_vals_2sig[-1])+'-'+str(d_vals_2sig[-1])+'\n'
-            my_str+='## 3sigma chi-sq interval='+str(u_vals_3sig[-1])+'-'+str(d_vals_3sig[-1])+'\n'
+            my_str+='_nd,_nu define the n sigma confidence interval\n'
+            #my_str+='## 1sigma Chi-sq interval='+str(u_vals_1sig[-1])+'-'+str(d_vals_1sig[-1])+'\n'
+            #my_str+='## 2sigma Chi-sq interval='+str(u_vals_2sig[-1])+'-'+str(d_vals_2sig[-1])+'\n'
+            #my_str+='## 3sigma chi-sq interval='+str(u_vals_3sig[-1])+'-'+str(d_vals_3sig[-1])+'\n'
                     
-            my_str+='\n#kT\tkT_u\tkT_d\tNorm\t\tNorm_1u\t\tNorm_1d\t\tNorm_2u\t\tNorm_2d\t\tNorm_3u\t\tNorm_3d\n'            
+            my_str+='\n#kT\tkT_1u\tkT_1d\tNorm\t\tNorm_1u\t\tNorm_1d\t\tNorm_2u\t\tNorm_2d\t\tNorm_3u\t\tNorm_3d\n'            
             f.write(my_str)
             j=0
     
@@ -782,11 +784,13 @@ def spectral_analysis_apec_pow(obsid,clean_type,spec_dir,model_type,kT_arr,freez
                 else:
                     start_index=0
                 my_str+='## Chi-sq='+str(median_vals[-1])+'\n'
-                my_str+='## 1sigma Chi-sq interval='+str(u_vals_1sig[-1])+'-'+str(d_vals_1sig[-1])+'\n'
-                my_str+='## 2sigma Chi-sq interval='+str(u_vals_2sig[-1])+'-'+str(d_vals_2sig[-1])+'\n'
-                my_str+='## 3sigma chi-sq interval='+str(u_vals_3sig[-1])+'-'+str(d_vals_3sig[-1])+'\n'
+                my_str+='_nd,_nu define the n sigma confidence interval\n'
+                #my_str+='## 1sigma Chi-sq interval='+str(u_vals_1sig[-1])+'-'+str(d_vals_1sig[-1])+'\n'
+                #my_str+='## 2sigma Chi-sq interval='+str(u_vals_2sig[-1])+'-'+str(d_vals_2sig[-1])+'\n'
+                #my_str+='## 3sigma chi-sq interval='+str(u_vals_3sig[-1])+'-'+str(d_vals_3sig[-1])+'\n'
                     
-                my_str+='\n#kT\tkT_2u\tkT_2d\tNorm\t\tNorm_1u\t\tNorm_1d\t\tNorm_2u\t\tNorm_2d\t\tNorm_3u\t\tNorm_3d\n'            
+                   
+                my_str+='\n#kT\tkT_1u\tkT_1d\tNorm\t\tNorm_1u\t\tNorm_1d\t\tNorm_2u\t\tNorm_2d\t\tNorm_3u\t\tNorm_3d\n'            
                 f.write(my_str)
                 j=0
     
@@ -796,7 +800,7 @@ def spectral_analysis_apec_pow(obsid,clean_type,spec_dir,model_type,kT_arr,freez
             
                         my_str+=str(median_vals[start_index+j])+'\t'+str(u_vals_1sig[start_index+j])+'\t'+str(d_vals_1sig[start_index+j])+'\t'+str(u_vals_2sig[start_index+j])+'\t'+str(d_vals_2sig[start_index+j])+'\t'+str(u_vals_3sig[start_index+j])+'\t'+str(d_vals_3sig[start_index+j])+'\n'
                     else:
-                        my_str=str(median_vals[start_index+j])+'\t'+str(u_vals_2sig[start_index+j])+'\t'+str(d_vals_2sig[start_index+j])+'\t'
+                        my_str=str(median_vals[start_index+j])+'\t'+str(u_vals_1sig[start_index+j])+'\t'+str(d_vals_1sig[start_index+j])+'\t'
                         j+=1
                         my_str+=str(median_vals[start_index+j])+'\t'+str(u_vals_1sig[start_index+j])+'\t'+str(d_vals_1sig[start_index+j])+'\t'+str(u_vals_2sig[start_index+j])+'\t'+str(d_vals_2sig[start_index+j])+'\t'+str(u_vals_3sig[start_index+j])+'\t'+str(d_vals_3sig[start_index+j])+'\n'
                     j+=1
