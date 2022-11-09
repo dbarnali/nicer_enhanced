@@ -109,7 +109,8 @@ def rename_lc_pha(obsid,clean_type,file_type):
         if os.path.isfile(filename)==True:
             if os.path.isfile(filename.split('.')[0]+'_previous.'+file_type)==True:
                 os.system('rm '+filename.split('.')[0]+'_previous.'+file_type)
-            os.system('rename s/.'+file_type+'/_previous.'+file_type+'/ '+filename)
+            #os.system('rename s/.'+file_type+'/_previous.'+file_type+'/ '+filename)
+            os.system('mv '+filename+' '+filename.split('.')[0]+'_previous.'+file_type)
 
 def run_xselect_custom_energy_range(obsid,obs_dir,clean_type='_default',time_bin_xselect=25,trigger=True,file_type='cl',en_type='mid',chan1=40,chan2=200):
     '''
@@ -613,7 +614,10 @@ def get_bkg_3c50(obsid,obs_dir='.',bkg_dir='/home/dbarnali/heasoft/3c50_bgmodel/
         cl_file     ='ni'+obs+'_0mpu7_cl'+clean_type+'.evt'
         command_str ='nibackgen3C50 rootdir=NONE obsid=NONE bkgidxdir='+bkg_dir+' bkglibdir='+bkg_dir+' gainepoch=2019 calevtdir=NONE ufafile='+ufa_file+' clfile='+cl_file+' clobber=YES'
         os.system(command_str)
-        os.system('rename s/_/_{}{}_/ nibackgen3C50*.pi'.format(obs,clean_type))
+        out_str_arr=['bkg_ngt.pi','bkg_day.pi','bkg.pi','tot.pi']
+        for i in range(len(out_str_arr)):
+            os.system('mv nibackgen3C50_'+out_str_arr[i]+' nibackgen3C50_'+obs+clean_type+'_'+out_str_arr[i])
+        #os.system('rename s/_/_{}{}_/ nibackgen3C50*.pi'.format(obs,clean_type))
         os.system('mv nibackgen3C50*.pi '+out_dir)
 
     os.chdir(ini_path)
