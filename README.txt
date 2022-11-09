@@ -7,7 +7,7 @@ But you can change the inputs appropriately in case you don't want to keep the c
 
 ****** Important ***********************
 You must enable heasoft before running the code, and have the 3C50 background model installed.
-This code also uses the 'rename' command (sudo apt install rename)
+
 *****************
 
 ************* INPUT explanation (the self-explanatory inputs are not included) **********
