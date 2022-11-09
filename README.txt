@@ -9,6 +9,8 @@ But you can change the inputs appropriately in case you don't want to keep the c
 You must enable heasoft before running the code, and have the 3C50 background model installed.
 
 *****************
+************ HOW TO RUN? ****************
+Edit input_enhanced.py (see below), and then type in the terminal: python3 enhanced.py
 
 ************* INPUT explanation (the self-explanatory inputs are not included) **********
 obsid_f		: The name of the file that contains the ObsIDs. 
@@ -45,7 +47,8 @@ primary_dir	: Path containing the codes
 4) Responses (arf and rmf): These will be in obs_dir/cl/full
 5) Grouped spectra	: These will be in obs_dir/cl/full
 6) MCMC outputs		: These will be in obs_dir/cl/full
-7) Text file containing norms, fluxes:  These will be in obs_dir/cl/full
+7) Text file containing norms, fluxes:  These will be in obs_dir/cl/full. Note that for the flux, you will have a list of flux values correspoding to the MCMC samples. You can take the median/mean of the 					   flux values, and estimate the confidence intervals. The number of flux values will be much smaller than the chain length by default.
+					Let me know if you want a longer array of flux values.
 
 
 
