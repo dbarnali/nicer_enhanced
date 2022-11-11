@@ -6,6 +6,8 @@ The default inputs assume that the codes are in the same directory that contains
 But you can change the inputs appropriately in case you don't want to keep the codes and the ObsID folders in the same path.
 
 ****** Important ***********************
+PART OF THE CODE IS BASED ON RESOURCES AVAILABLE IN https://github.com/veropetit/nicer
+
 You must enable heasoft before running the code, and have the 3C50 background model installed.
 
 *****************
