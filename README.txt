@@ -45,9 +45,9 @@ primary_dir	: Path containing the codes
 2) Lightcurve and spectra: Outputs of xselect. The ufa (unfiltered) and cleaned outputs will be in obs_dir/ufa and obs_dir/cl respectively. 
 			  Inside each of them, there will be four directories (at max): full (0-15 keV), low (0.3-0.4 keV), mid (0.4-2.0 keV) and high (12-15 keV).
                           The most important outputs will be in obs_dir/cl/full
-3) Background spectra	: These will be in obs_dir/cl/full
-4) Responses (arf and rmf): These will be in obs_dir/cl/full
-5) Grouped spectra	: These will be in obs_dir/cl/full
+3) Background spectra	: These will be in obs_dir/cl/full (e.g. nibackgen3C50_3627010101_default_bkg.pi, where '3627010101' is the ObsID, and '_default' is the clean_type.)
+4) Responses (arf and rmf): These will be in obs_dir/cl/full (e.g.  nibackgen3C50_3627010101_tot.arf, nibackgen3C50_3627010101_tot.rmf)
+5) Grouped spectra	: These will be in obs_dir/cl/full (e.g. nibackgen3C50_3627010101_default_tot_grp15.pi, '15' is the chosen minimum counts per energy bin or the min_count.)
 6) MCMC outputs		: These will be in obs_dir/cl/full
 7) Text file containing norms, fluxes:  These will be in obs_dir/cl/full. Note that for the flux, you will have a list of flux values correspoding to the MCMC samples. You can take the median/mean of the 					   flux values, and estimate the confidence intervals. The number of flux values will be much smaller than the chain length by default.
 					Let me know if you want a longer array of flux values.

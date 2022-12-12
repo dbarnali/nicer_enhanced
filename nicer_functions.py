@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from astropy.io import fits
 from matplotlib.backends.backend_pdf import PdfPages
 import os
-from nicergof.bkg import bkg_estimator as be
+#from nicergof.bkg import bkg_estimator as be
 import matplotlib as mpl
 from astropy.time import Time
 from astropy.time import TimeDelta
